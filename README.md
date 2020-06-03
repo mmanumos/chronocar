@@ -12,7 +12,7 @@
 * [x] Flask
 
 ## Directory description
-* ```àpi/``` 
+* ```api/``` 
 * ```models/``` 
 * ```static/``` Directory contains all content static this project.
 * ```templates/``` Directory contains all html files for this project.
