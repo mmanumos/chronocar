@@ -15,22 +15,13 @@ class DBStorage:
         """ Create the connection bridge with Database """
         MYSQL_USER = 'chrono_dev_user'
         MYSQL_PWD = 'chrono_dev_pwd'
+        MYSQL_HOST = 'localhost'
         MYSQL_DB = 'chrono_dev_db'
-
-        with SSHTunnelForwarder(
-            ('54.209.158.161', 22),
-            ssh_username='ubuntu',
-            ssh_pkey='~/.ssh/holberton',
-            remote_bind_address=('127.0.0.1', 3306)
-        )  as server:
-            server.start()  # start ssh sever
-            local_port = str(server.local_bind_port)
-            self.__engine= create_engine('mysql+pymysql://{}:{}@{}:{}/{}?charset=utf8'.format(MYSQL_USER,
-                                                                                    MYSQL_PWD,
-                                                                                    '127.0.0.1',
-                                                                                    local_port,
-                                                                                    MYSQL_DB),
-                               pool_recycle=1)
+        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
+                                      format(MYSQL_USER,
+                                             MYSQL_PWD,
+                                             MYSQL_HOST,
+                                             MYSQL_DB))
 
     def reload(self):
         """ Load all data in objects for sqlAlchemy metadata to be used by the session """
