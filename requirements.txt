@@ -1,0 +1,7 @@
+flask
+flask-bootstrap
+flask-wtf
+flask-testing
+blinker
+sshtunnel
+pymysql
