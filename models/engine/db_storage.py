@@ -5,6 +5,8 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from models.base_model import Base
 
+my_classes = ["User", "CategoryMain", "CategorySub"]
+
 class DBStorage:
     """ Administration, manipulation and connection for database """
       
@@ -34,15 +36,35 @@ class DBStorage:
         """ remove session of a database """
         self.__session.remove()
 
-    def add(self, obj):
+    def insert(self, obj):
         """ Add the object to the map/metadata of the sqlalchemy orm """
         self.__session.add(obj)
+        self.commit()
 
     def commit(self):
         """ Insert and update all changes for sqlalchemy map/metadata into database """
         self.__session.commit()
 
+    def delete(self, obj=None):
+        """  """
+        if obj is not None:
+            self.__session.delete(obj)
+            self.commit()
 
+    def getobject(self, cls=None, keyname=None, keyvalue=None):
+        """ Get objects/object depending  """
+        dict_objs = {}
+        print("keyname ", keyname)
+        if cls is not None:
+            list_objs = self.__session.query(cls).all()
+            if (keyname and keyvalue) is not None:
+                for obj in list_objs:
+                    if obj.__dict__[keyname] == keyvalue:
+                        dict_objs[obj.__class__.__name__ + '.' + str(obj.id)] = obj
+            else:
+                for obj in list_objs:
+                    dict_objs[obj.__class__.__name__ + '.' + str(obj.id)] = obj
+        return dict_objs
 
 
 
