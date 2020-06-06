@@ -20,11 +20,12 @@
 * ```root/README.md``` Containing a description of the repository and describing what this project is about.
 * ```root/directory/README.md``` Containing a specific description of the directory content.
 * ```console.py``` Contains the entry point of the command interpreter.
-* ```setup_mysql_dev.sq``` and ```setup_mysql_test.sql``` Script that prepare a MySQL server for the project.
+* ```setup_mysql_dev.sq``` and ```setup_mysql_test.sql``` Scripts that prepare a MySQL server for the project.
 
 ## Install & Setup
 * [x] MySQL
 * [x] Flask
+* [x] SQLAlchemy
 
 ## Developers
 Manuel Mosquera - [GitHub](https://github.com/mmanumos) / [Twitter](https://twitter.com/mmanumos)  
