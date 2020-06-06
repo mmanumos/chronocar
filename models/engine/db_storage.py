@@ -7,9 +7,9 @@ from models.base_model import Base
 
 class DBStorage:
     """ Administration, manipulation and connection for database """
-
-    __session = None
-    __engine =  None
+      
+    __session = None #private attribute to manage session for database
+    __engine =  None #private attribute that contains connection configuration
 
     def __init__ (self):
         """ Create the connection bridge with Database """
@@ -24,7 +24,7 @@ class DBStorage:
                                              MYSQL_DB))
 
     def reload(self):
-        """ Load all data in objects for sqlAlchemy metadata to be used by the session """
+        """ Load all data in objects for sqlAlchemy metadata/map to be used by the session """
         Base.metadata.create_all(self.__engine)
         sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factory)
@@ -35,10 +35,11 @@ class DBStorage:
         self.__session.remove()
 
     def add(self, obj):
-        """ Add the object to the map of the sqlalchemy orm """
+        """ Add the object to the map/metadata of the sqlalchemy orm """
         self.__session.add(obj)
 
     def commit(self):
+        """ Insert and update all changes for sqlalchemy map/metadata into database """
         self.__session.commit()
 
 
