@@ -8,9 +8,6 @@
 * [x] Python
 * [x] MySQL
 
-## Framework
-* [x] Flask
-
 ## Directory description
 * ```api/``` 
 * ```models/``` 
@@ -19,10 +16,15 @@
 * ```tests/``` 
 
 ## File description
-* ```console.py``` Contains the entry point of the command interpreter.
 * ```AUTHORS``` Lists all individuals having contributed content to the repository.
 * ```root/README.md``` Containing a description of the repository and describing what this project is about.
 * ```root/directory/README.md``` Containing a specific description of the directory content.
+* ```console.py``` Contains the entry point of the command interpreter.
+* ```setup_mysql_dev.sq``` and ```setup_mysql_test.sql``` Script that prepare a MySQL server for the project.
+
+## Install & Setup
+* [x] MySQL
+* [x] Flask
 
 ## Developers
 Manuel Mosquera - [GitHub](https://github.com/mmanumos) / [Twitter](https://twitter.com/mmanumos)  
