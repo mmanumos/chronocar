@@ -15,16 +15,12 @@ class BaseModel:
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow)
 
-    def __init__(self, name, last_name, created_at, updated_at):
-        self.id = id
-        self.name = name
-        self.last_name = last_name
-        self.created_at = created_at
-        self.updated_at = updated_at
-
+    def __init__(self, **kwargs):
+        """  """
+        for key, value in kwargs.items():
+            setattr(self, key, value)    
+        
     def create(self):
+        """  """
         models.storage.add(self)
         models.storage.commit()
-
-
-
