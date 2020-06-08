@@ -54,7 +54,6 @@ class DBStorage:
     def getobject(self, cls=None, keyname=None, keyvalue=None):
         """ Get objects/object depending  """
         dict_objs = {}
-        print("keyname ", keyname)
         if cls is not None:
             list_objs = self.__session.query(cls).all()
             if (keyname and keyvalue) is not None:
