@@ -2,7 +2,7 @@ import models
 from models.base_model import BaseModel, Base
 from models.category_main import CategoryMain
 from models.user import User
-from sqlalchemy import Column, String, Integer, ForeignKey
+from sqlalchemy import Column, String, Integer, ForeignKey 
 
 class CategorySub(BaseModel, Base):
     """ class tha defines behavior and data for subcategories  """
