@@ -7,7 +7,6 @@ Base = declarative_base() #The object is created to map all classes
 
 class BaseModel:
     """  """
-
     id = Column(Integer, nullable=False, primary_key=True)  #Auto-increment should be default
     name = Column(String(45), nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
