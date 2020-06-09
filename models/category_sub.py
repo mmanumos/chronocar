@@ -27,4 +27,7 @@ class CategorySub(BaseModel, Base):
 
     @property
     def expenses(self):
-        pass
+        """ Getter method to return all expenses associated to the CategorySub """
+        from models.expense import Expense
+        list_expense = models.storage.getobject(Expense, "CategorySub_id", self.id)
+        return list_expense
