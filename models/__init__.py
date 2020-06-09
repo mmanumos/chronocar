@@ -1,5 +1,3 @@
-from models.engine.db_storage import DBStorage
-
-""" An instance of DBStorage common for all models """
-storage = DBStorage()
+from models.engine.file_storage import FileStorage
+storage = FileStorage()
 storage.reload()

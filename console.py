@@ -4,6 +4,7 @@ import shlex
 import models
 from models.base_model import BaseModel
 from models.user import User
+<<<<<<< HEAD
 
 class CHRONOCARCommand(cmd.Cmd):
     """ Contains the methods to work into the commands line """
@@ -35,6 +36,7 @@ class CHRONOCARCommand(cmd.Cmd):
             obj = eval(my_list[0])()
             models.storage.insert(obj)
             print(obj.id)
+            obj.save()
         else:
             print(self.list_err[1])
 
