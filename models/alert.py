@@ -18,8 +18,8 @@ class Alert(Base):
     updated_at = Column(DateTime, default=datetime.utcnow)
     CategorySub_id = Column(Integer, ForeignKey(CategorySub.id), nullable=False)
 
-    def __init__(self, id, mileage_limit, mileage_act, high, middle, low, created_at, updated_at, CategorySub_id):
-        self.id = id
+    def __init__(self, mileage_limit, mileage_act, high, middle, low, created_at, updated_at, CategorySub_id):
+        """ Constructor """
         self.mileage_limit = mileage_limit
         self.mileage_act = mileage_act
         self.high = high
