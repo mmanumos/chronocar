@@ -13,7 +13,6 @@ class CategorySub(BaseModel, Base):
     alerts = relationship("Alert", backref="CategorySub")
     expenses = relationship("Expense", backref="CategorySub")
 
-
     def __init__(self, **kwargs):
         """ constructor sends the values for the object to be created from BaseModel """
         BaseModel.__init__(self, **kwargs)
