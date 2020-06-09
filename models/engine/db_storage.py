@@ -46,24 +46,36 @@ class DBStorage:
         self.__session.commit()
 
     def delete(self, obj=None):
-        """  """
+        """ remove an object of a session and the Database  """
         if obj is not None:
             self.__session.delete(obj)
             self.commit()
 
-    def getobject(self, cls=None, keyname=None, keyvalue=None):
-        """ Get objects/object depending  """
+    def getobject(self, cls=None, keyname=None, keyvalue=None, typereturn=None):
+        """ Get objects/object depending class - This is essencial  """
+        """ keyname - It can be any attribute of the class - No essencial """
+        """ keyvalue - Value which it going to be compared against [keyname value]  """
+        """ typereturn - Return the result by default in list format, but it can in dictionary format too  """
+
         dict_objs = {}
         if cls is not None:
             list_objs = self.__session.query(cls).all()
             if (keyname and keyvalue) is not None:
                 for obj in list_objs:
-                    if obj.__dict__[keyname] == keyvalue:
+                    if obj.__dict__[keyname] == int(keyvalue):
                         dict_objs[obj.__class__.__name__ + '.' + str(obj.id)] = obj
             else:
                 for obj in list_objs:
                     dict_objs[obj.__class__.__name__ + '.' + str(obj.id)] = obj
-        return dict_objs
+            
+            if typereturn == "Dict":
+                return dict_objs
+            else:
+                list_objs = []
+                for key, value in dict_objs.items():
+                    list_objs.append(value)
+                return list_objs
+
 
 
 
