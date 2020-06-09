@@ -1,24 +1,40 @@
-import models
-from sqlalchemy import Column, String, Integer, DateTime
 from datetime import datetime
-from sqlalchemy.ext.declarative import declarative_base
+from uuid import uuid4
+import models
 
-Base = declarative_base() #The object is created to map all classes
 
 class BaseModel:
-    """  """
+    """ Defines all common attributes/methods for other classes """
 
-    id = Column(Integer, nullable=False, primary_key=True)  #Auto-increment should be default
-    name = Column(String(45), nullable=False)
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow)
+    def __init__(self, *args, **kwargs):
+        """" Constructor with public instance attributes """
+        if kwargs:
+            for key, value in kwargs.items():
+                if key in ["created_at", "updated_at"]:
+                    value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
+                if key not in ['__class__']:
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            models.storage.new(self)
 
-    def __init__(self, **kwargs):
-        """ Constructor builds the object in base of key(attribute) and value """
-        for key, value in kwargs.items():
-            setattr(self, key, value)    
+    def __str__(self):
+        """ Method that define print """
+        return ("[{}] ({}) {}".format(self.__class__.__name__, self.id,
+                                      self.__dict__))
+
+    def save(self):
+        """ Method that updates the public instance attribute updated_at """
+        self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
-        """ return the object like dictionary with some changes  """
-        dict_obj = self.__dict__.copy()
-        return dict_obj
+        """ Method that returns a dictionary containing all keys/values of
+        __dict__ of the instance """
+        my_dict = self.__dict__.copy()
+        my_dict['__class__'] = self.__class__.__name__
+        my_dict['created_at'] = self.created_at.isoformat()
+        my_dict['updated_at'] = self.updated_at.isoformat()
+        return(my_dict)
