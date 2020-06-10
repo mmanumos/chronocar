@@ -73,7 +73,7 @@ class DBStorage:
             else:
                 list_objs = []
                 for key, value in dict_objs.items():
-                    list_objs.append(value)
+                    list_objs.append(value.to_dict())
                 return list_objs
 
 
