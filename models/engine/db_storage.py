@@ -1,6 +1,6 @@
 #all models(class) must be imported to verify if an object exists
 import sqlalchemy
-from sshtunnel import SSHTunnelForwarder
+#from sshtunnel import SSHTunnelForwarder
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from models.base_model import Base
