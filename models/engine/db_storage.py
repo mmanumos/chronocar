@@ -56,7 +56,6 @@ class DBStorage:
         """ keyname - It can be any attribute of the class - No essencial """
         """ keyvalue - Value which it going to be compared against [keyname value]  """
         """ typereturn - Return the result by default in list format, but it can in dictionary format too  """
-
         dict_objs = {}
         if cls is not None:
             list_objs = self.__session.query(cls).all()

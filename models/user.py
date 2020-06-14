@@ -22,8 +22,8 @@ class User(BaseModel, Base):
     def categories_sub(self):
         """ Getter method to return all categories_sub associated to the user """
         from models.category_sub import CategorySub
-        dict_categories = models.storage.getobject(CategorySub, "User_id", self.id)
-        return dict_categories
+        list_categories = models.storage.getobject(CategorySub, "User_id", self.id)
+        return list_categories
 
     def login():
         """ login """
