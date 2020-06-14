@@ -28,3 +28,10 @@ class Alert(Base):
         self.created_at = created_at
         self.updated_at = updated_at
         self.CategorySub_id = CategorySub_id
+
+    def to_dict(self):
+        """ return the object like dictionary with some changes  """
+        dict_obj = self.__dict__.copy()
+        if dict_obj['_sa_instance_state']:
+            del dict_obj['_sa_instance_state']
+        return dict_obj
