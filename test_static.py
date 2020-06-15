@@ -3,23 +3,38 @@ app = Flask(__name__)
 
 
 @app.route('/base')
-def base():
+def _base():
     return render_template('base.html')
 
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+@app.route('/login')
+def _login():
+    return render_template('login.html')
 
 
-@app.route('/page1')
-def page1():
-    return render_template('page1.html')
+@app.route('/panel')
+def _panel():
+    return render_template('panel.html')
 
 
-@app.route('/page2')
-def page2():
-    return render_template('page2.html')
+@app.route('/expenses')
+def _expenses():
+    return render_template('expenses.html')
+
+
+@app.route('/categories')
+def _categories():
+    return render_template('categories.html')
+
+
+@app.route('/settings')
+def _settings():
+    return render_template('settings.html')
+
+
+@app.route('/help')
+def _help():
+    return render_template('help.html')
 
 
 if __name__ == '__main__':

@@ -3,6 +3,15 @@ body {
     background-color: black;
 }
 */
-main .fas {
+main h1 .fas {
+    font-size: 3rem;
+}
+main a .fas {
     font-size: 2rem;
+}
+main td .fas {
+    font-size: 1.5rem;
+}
+footer p .far {
+    font-size: 0.8rem;
 }
