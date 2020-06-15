@@ -2,7 +2,6 @@ import models
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.orm import relationship
-#Pending md5 for password
 
 class User(BaseModel, Base):
     """ Class to define behavior and data for users """
@@ -22,8 +21,8 @@ class User(BaseModel, Base):
     def categories_sub(self):
         """ Getter method to return all categories_sub associated to the user """
         from models.category_sub import CategorySub
-        dict_categories = models.storage.getobject(CategorySub, "User_id", self.id)
-        return dict_categories
+        list_categories = models.storage.getobject(CategorySub, "User_id", self.id)
+        return list_categories
 
      
 

@@ -21,4 +21,11 @@ class BaseModel:
     def to_dict(self):
         """ return the object like dictionary with some changes  """
         dict_obj = self.__dict__.copy()
+        if dict_obj['_sa_instance_state']:
+            del dict_obj['_sa_instance_state']
         return dict_obj
+
+    def __str__(self):
+        """String representation of the BaseModel class"""
+        return "[{:s}] ({}) {}".format(self.__class__.__name__, self.id,
+                                         self.__dict__)

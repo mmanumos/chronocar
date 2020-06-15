@@ -18,13 +18,14 @@ class Alert(Base):
     updated_at = Column(DateTime, default=datetime.utcnow)
     CategorySub_id = Column(Integer, ForeignKey(CategorySub.id), nullable=False)
 
-    def __init__(self, mileage_limit, mileage_act, high, middle, low, created_at, updated_at, CategorySub_id):
-        """ Constructor """
-        self.mileage_limit = mileage_limit
-        self.mileage_act = mileage_act
-        self.high = high
-        self.middle = middle
-        self.low = low
-        self.created_at = created_at
-        self.updated_at = updated_at
-        self.CategorySub_id = CategorySub_id
+    def __init__(self, **kwargs):
+        """ Constructor builds the object in base of key(attribute) and value """
+        for key, value in kwargs.items():
+            setattr(self, key, value)
+
+    def to_dict(self):
+        """ return the object like dictionary with some changes  """
+        dict_obj = self.__dict__.copy()
+        if dict_obj['_sa_instance_state']:
+            del dict_obj['_sa_instance_state']
+        return dict_obj

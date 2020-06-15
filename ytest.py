@@ -6,9 +6,15 @@ from models.category_sub import CategorySub
 from models.user import User
 
 
-Myuser = User(name="User 1", last_name="Apellido 1", email="asdas@sdsd", password="password", initial_mileage=3000, created_at="2020-09-08", updated_at="2020-05-09")
-models.storage.insert(Myuser)
-print(Myuser.id)
+
+#Myuser = User(name="User 1", last_name="Apellido 1", email="asdas@sdsd", password="password", initial_mileage=3000, created_at="2020-09-08", updated_at="2020-05-09")
+#models.storage.insert(Myuser)
+#print(Myuser.id)
+
+#Myuser = User(name="User 5", last_name="Apellido 5", email="asdas@sdsd", password="password", initial_mileage=3000, created_at="2020-09-08", updated_at="2020-05-09")
+#models.storage.insert(Myuser)
+#print(Myuser.id)
+
 #Mycs = CategorySub(id=5, name="Neumáticos", created_at="2020-09-08", updated_at="2020-05-09", CategoryMain_id=1, User_id=3)
 #models.storage.insert(Mycs)
 #print(Mycs)
@@ -27,3 +33,7 @@ print(Myuser.id)
 #print(mycs[0].expenses)
 #mycs = models.storage.getobject(CategorySub, "id", 2)
 #print(mycs[0].expenses)
+
+#mycs = models.storage.getobject(User)
+#print(mycs[0])
+

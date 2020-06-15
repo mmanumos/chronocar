@@ -1,6 +1,6 @@
 #all models(class) must be imported to verify if an object exists
 import sqlalchemy
-from sshtunnel import SSHTunnelForwarder
+#from sshtunnel import SSHTunnelForwarder
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 from models.base_model import Base
@@ -56,7 +56,6 @@ class DBStorage:
         """ keyname - It can be any attribute of the class - No essencial """
         """ keyvalue - Value which it going to be compared against [keyname value]  """
         """ typereturn - Return the result by default in list format, but it can in dictionary format too  """
-
         dict_objs = {}
         if cls is not None:
             list_objs = self.__session.query(cls).all()
@@ -73,7 +72,7 @@ class DBStorage:
             else:
                 list_objs = []
                 for key, value in dict_objs.items():
-                    list_objs.append(value)
+                    list_objs.append(value.to_dict())
                 return list_objs
 
 
