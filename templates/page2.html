@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <p class="mt-2">06/14/2020 Último kilometraje 3450 km</p>
+    <div class="row text-center my-4">
+        <div class="col p-1">
+            <a href="">
+                <p>Combustible</p>
+                <i class="fas fa-gas-pump"></i>
+            </a>
+        </div>
+        <div class="col p-1">
+            <a href="">
+                <p>Mto. Preventivo</p>
+                <i class="fas fa-tasks"></i>
+            </a>
+        </div>
+        <div class="w-100"></div>
+        <div class="col p-1">
+            <a href="">
+                <p>Consumibles</p>
+                <i class="fas fa-shopping-bag"></i>
+            </a>
+        </div>
+        <div class="col p-1">
+            <a href="">
+                <p>Mto. Correctivo</p>
+                <i class="fas fa-tools"></i>
+            </a>
+        </div>
+    </div>
+</main>
+<aside>
+    <p class="text-center"><i class="fas fa-exclamation-triangle text-warning"></i> &nbsp;Alertas - Mantenimiento
+        Preventivo</p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Faltan</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Categoría</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>230 km</td>
+                <td class="text-center"><i class="fas fa-circle text-danger""></i></td>
+                <td>Aceite</td>
+            </tr>
+            <tr>
+                <td>500 km</td>
+                <td class=" text-center"><i class="fas fa-circle text-warning"></i></td>
+                <td>Batería</td>
+            </tr>
+            <tr>
+                <td>1500 km</td>
+                <td class="text-center"><i class="fas fa-circle text-success"></i></td>
+                <td>Llantas</td>
+            </tr>
+        </tbody>
+    </table>
+    {% endblock %}

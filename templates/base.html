@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <title>Chronocar</title>
+</head>
+
+<body>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <i class="fas fa-wallet"></i>
+        </a>
+        <p>Panel</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mis Gastos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ajustes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ayuda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Cerrar sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container-fluid">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="text-center">
+        <i class="far fa-copyright"></i>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+
+</html>
