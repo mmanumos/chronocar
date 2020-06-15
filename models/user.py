@@ -2,7 +2,6 @@ import models
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String, Integer
 from sqlalchemy.orm import relationship
-#Pending md5 for password
 
 class User(BaseModel, Base):
     """ Class to define behavior and data for users """
