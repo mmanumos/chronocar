@@ -75,6 +75,30 @@ class DBStorage:
                     list_objs.append(value.to_dict())
                 return list_objs
 
+    def getuser(self, cls=None, keyname=None, keyvalue=None, typereturn=None):
+        """ Get objects/object depending class - This is essencial  """
+        """ keyname - It can be any attribute of the class - No essencial """
+        """ keyvalue - Value which it going to be compared against [keyname value]  """
+        """ typereturn - Return the result by default in list format, but it can in dictionary format too  """
+        dict_objs = {}
+        if cls is not None:
+            list_objs = self.__session.query(cls).all()
+            if (keyname and keyvalue) is not None:
+                for obj in list_objs:
+                    if obj.__dict__[keyname] == keyvalue:
+                        dict_objs[obj.__class__.__name__ + '.' + str(obj.id)] = obj
+            else:
+                for obj in list_objs:
+                    dict_objs[obj.__class__.__name__ + '.' + str(obj.id)] = obj
+            
+            if typereturn == "Dict":
+                return dict_objs
+            else:
+                list_objs = []
+                for key, value in dict_objs.items():
+                    list_objs.append(value.to_dict())
+                return list_objs
+
 
 
 

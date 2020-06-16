@@ -60,5 +60,23 @@ def delete_object(user_id):
     except Exception:
         abort(404)
 
+@app_views.route('/users/<user_email>/login', methods=['POST'])
+def login(user_email):
+    """ Verify password and email  """
+    try:
+        users = storage.getuser(User, "email", user_email)
+        if len(users) == 0:
+            return jsonify({"Error": "User email not found"})
+        data = request.get_json(force=True)
+        if 'password' not in data:
+            return jsonify({"Error": "Password is required"})
+        if users[0]['password'] == data['password']:
+            if 'password' in users[0]:
+                del users[0]['password']
+            return jsonify(users[0])
+    except Exception:
+        abort(404)
+
+
 
 

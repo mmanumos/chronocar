@@ -73,8 +73,8 @@ def alerts_settings(user_id):
     except Exception:
         abort(404)
 
-@app_views.route('/users/<user_id>/alerts/pannel/')
-def alerts_pannel(user_id):
+@app_views.route('/users/<user_id>/alerts/panel/', methods=['GET'])
+def alerts_panel(user_id):
     """ alerts with colors for main Pannel - Module """
     try:
         my_user = storage.getobject(User, "id", user_id, "Dict")["User." + str(user_id)]
