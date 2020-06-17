@@ -1,13 +1,32 @@
-// Get is used to verify if API                                                                                                                                                
+// Get is used to verify if API
 $.ajax({
     url: 'http://34.71.55.165:5000/api/v1/status',
     type: 'GET',
     success: function (data) {
         if (data.status == "OK") {
-            alert('GOOGLE CLOUD - API STATUS OK');
+            console.log('GOOGLE CLOUD - API STATUS OK');
         }
     },
     error: function () {
-        alert('error API connection');
+        console.log('error API connection');
     }
+});
+// jQuery
+const obj = {}
+$(document).ready(function () {
+    $('#btnSignin').click(function () {
+        const name = $(this).attr('name');
+        const password = $(this).attr('password');
+        $.ajax({
+            url: 'http://34.71.55.165:5000/api/v1/users/login/',
+            type: 'POST',
+            data: $("#form-signin").serialize(),
+            success: function (data) {
+                console.log('Good!');
+            },
+            error: function () {
+                console.log('Error')
+            }
+        });
+    });
 });

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request, redirect
 app = Flask(__name__)
 
 
@@ -10,6 +10,11 @@ def _base():
 @app.route('/login')
 def _login():
     return render_template('login.html')
+
+
+@app.route('/create_account')
+def _create_account():
+    return render_template('create-account.html')
 
 
 @app.route('/panel')
