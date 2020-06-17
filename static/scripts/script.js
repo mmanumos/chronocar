@@ -12,10 +12,9 @@ $.ajax({
     }
 });
 // jQuery
-const obj = {}
 $(document).ready(function () {
     $('#btnSignin').click(function () {
-        const name = $(this).attr('name');
+        const email = $(this).attr('email');
         const password = $(this).attr('password');
         $.ajax({
             url: 'http://34.71.55.165:5000/api/v1/users/login/',
