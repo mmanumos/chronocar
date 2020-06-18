@@ -5,8 +5,8 @@ Expenses
 
 {% block content %}
 <div class="text-center">
-    <p>June/15/2020</p>
-    <p>Total $97.000</p>
+    <p id="date_act_expense"></p>
+    <p id="total_expense"></p>
 </div>
 <table class="table table-striped">
     <thead>
@@ -16,27 +16,8 @@ Expenses
             <th scope="col">Price</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-            <td>2020/05/02</td>
-            <td>Gas</td>
-            <td>30.000</td>
-        </tr>
-        <tr>
-            <td>2020/05/05</td>
-            <td>Oil</td>
-            <td>32.000</td>
-        </tr>
-        <tr>
-            <td>2020/05/02</td>
-            <td>Car Wash</td>
-            <td>25.000</td>
-        </tr>
-        <tr>
-            <td>2020/05/07</td>
-            <td>Gas</td>
-            <td>10.000</td>
-        </tr>
+    <tbody id="table-expenses">
     </tbody>
 </table>
+
 {% endblock %}
