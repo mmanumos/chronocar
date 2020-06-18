@@ -1,3 +1,4 @@
+let userId;
 // Get is used to verify if API
 $.ajax({
     url: 'http://34.71.55.165:5000/api/v1/status',
@@ -26,6 +27,10 @@ $('#btnSignin').click(function () {
         data: JSON.stringify(user),
         ContentType: 'Application/json',
         success: function (result) {
+            userId = result.id;
+            sessionStorage.setItem('User ID', userId);
+            const divUserId = document.getElementById('showUserId');
+            console.log(userId);
             location.href = "panel";
         },
         error: function (myerror) {
@@ -54,6 +59,8 @@ $('#btnCreateAccount').click(function () {
         data: JSON.stringify(user),
         ContentType: 'Application/json',
         success: function (result) {
+            userId = result.id;
+            console.log(userId);
             location.href = "panel";
         },
         error: function (myerror) {
