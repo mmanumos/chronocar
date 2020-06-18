@@ -15,7 +15,10 @@
         <a class="navbar-brand" href="#">
             <i class="fas fa-wallet"></i>
         </a>
-        <p>Title section</p>
+        <p>
+            {% block title %}
+            {% endblock %}
+        </p>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>

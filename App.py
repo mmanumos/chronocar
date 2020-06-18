@@ -1,11 +1,6 @@
 from flask import Flask, render_template, url_for, make_response, redirect
 app = Flask(__name__)
 
-@app.route('/')
-def redirect_default():
-    response = make_response(redirect("/login"))
-    return response
-
 @app.route('/base')
 def _base():
     return render_template('base.html')
@@ -44,4 +39,4 @@ def redirect_default():
     return response
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)

@@ -1,58 +1,62 @@
 {% extends 'base.html' %}
-    {% block content %}
-    <p class="mt-2">06/14/2020 Last mileage 3450 km</p>
-    <div class="row text-center my-4">
-        <div class="col p-1">
-            <a href="">
-                <p>Fuel</p>
-                <i class="fas fa-gas-pump"></i>
-            </a>
-        </div>
-        <div class="col p-1">
-            <a href="">
-                <p>Preventive Maintenance</p>
-                <i class="fas fa-tasks"></i>
-            </a>
-        </div>
-        <div class="w-100"></div>
-        <div class="col p-1">
-            <a href="">
-                <p>Consumables</p>
-                <i class="fas fa-shopping-bag"></i>
-            </a>
-        </div>
-        <div class="col p-1">
-            <a href="">
-                <p>Corrective Maintenance</p>
-                <i class="fas fa-tools"></i>
-            </a>
-        </div>
+{% block title %}
+Panel
+{% endblock %}
+{% block content %}
+<p class="mt-2">06/14/2020 Last mileage 3450 km</p>
+<div class="row text-center my-4">
+    <div class="col p-1">
+        <a href="">
+            <p>Fuel</p>
+            <i class="fas fa-gas-pump"></i>
+        </a>
     </div>
-    <p class="text-center"><i class="fas fa-exclamation-triangle text-warning"></i> &nbsp;Alerts - Preventive Maintenance</p>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Missing</th>
-                <th scope="col">State</th>
-                <th scope="col">Category</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>230 km</td>
-                <td class="text-center"><i class="fas fa-circle text-danger""></i></td>
+    <div class="col p-1">
+        <a href="">
+            <p>Preventive Maintenance</p>
+            <i class="fas fa-tasks"></i>
+        </a>
+    </div>
+    <div class="w-100"></div>
+    <div class="col p-1">
+        <a href="">
+            <p>Consumables</p>
+            <i class="fas fa-shopping-bag"></i>
+        </a>
+    </div>
+    <div class="col p-1">
+        <a href="">
+            <p>Corrective Maintenance</p>
+            <i class="fas fa-tools"></i>
+        </a>
+    </div>
+</div>
+<p class="text-center"><i class="fas fa-exclamation-triangle text-warning"></i> &nbsp;Alerts - Preventive Maintenance
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Missing</th>
+            <th scope="col">State</th>
+            <th scope="col">Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>230 km</td>
+            <td class="text-center"><i class="fas fa-circle text-danger""></i></td>
                 <td>Oil</td>
             </tr>
             <tr>
                 <td>500 km</td>
                 <td class=" text-center"><i class="fas fa-circle text-warning"></i></td>
-                <td>Battery</td>
-            </tr>
-            <tr>
-                <td>1500 km</td>
-                <td class="text-center"><i class="fas fa-circle text-success"></i></td>
-                <td>Tire</td>
-            </tr>
-        </tbody>
-    </table>
-    {% endblock %}
+            <td>Battery</td>
+        </tr>
+        <tr>
+            <td>1500 km</td>
+            <td class="text-center"><i class="fas fa-circle text-success"></i></td>
+            <td>Tire</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}
