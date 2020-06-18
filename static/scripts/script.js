@@ -26,7 +26,7 @@ $('#btnSignin').click(function () {
         data: JSON.stringify(user),
         ContentType: 'Application/json',
         success: function (result) {
-            console.log(result);
+            location.href ="panel";
         },
         error: function (myerror) {
             console.log(myerror);
@@ -54,7 +54,7 @@ $('#btnCreateAccount').click(function () {
         data: JSON.stringify(user),
         ContentType: 'Application/json',
         success: function (result) {
-            console.log(result);
+            location.href ="panel";
         },
         error: function (myerror) {
             console.log(myerror);

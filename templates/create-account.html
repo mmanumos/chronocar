@@ -19,23 +19,31 @@
     <form method="POST">
       <div class="form-group">
         <label for="name">First name</label>
-        <input type="text" name="name" id="name" class="form-control">
+        <input type="text" name="name" id="name" class="form-control" required>
       </div>
       <div class="form-group">
         <label for="last_name">Last name</label>
-        <input type="text" name="last_name" id="last_name" class="form-control">
+        <input type="text" name="last_name" id="last_name" class="form-control" required>
       </div>
       <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" class="form-control">
+        <input type="email" name="email" id="email" class="form-control" required>
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" class="form-control">
+        <input type="password" name="password" id="password" class="form-control" required>
       </div>
       <div class="form-group">
         <label for="initial_mileage">Initial mileage</label>
-        <input type="text" name="initial_mileage" id="initial_mileage" class="form-control">
+        <input type="text" name="initial_mileage" id="initial_mileage" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+          <label class="form-check-label" for="invalidCheck2">
+            Agree to terms and conditions
+          </label>
+        </div>
       </div>
       <input type="button" id="btnCreateAccount" value="Create account" class="btn btn-primary btn-block"/>
     </form>
