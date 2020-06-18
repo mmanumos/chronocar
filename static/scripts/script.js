@@ -11,21 +11,26 @@ $.ajax({
         console.log('error API connection');
     }
 });
-// jQuery
-$(document).ready(function () {
-    $('#btnSignin').click(function () {
-        const email = $(this).attr('email');
-        const password = $(this).attr('password');
-        $.ajax({
-            url: 'http://34.71.55.165:5000/api/v1/users/login/',
-            type: 'POST',
-            data: $("#form-signin").serialize(),
-            success: function (data) {
-                console.log('Good!');
-            },
-            error: function () {
-                console.log('Error')
-            }
-        });
+// Login
+$('#btnSignin').click(function(){
+    var email = $("#email").val();
+    var password = $("#password").val();
+    var user = {
+            "email": email,
+            "password": password
+    };
+    var url = "http://34.71.55.165:5000/api/v1/users/login/";
+    $.ajax({
+       type: "POST",
+       url: url,
+       data: JSON.stringify(user),
+       ContentType: 'Application/json',
+       success: function(result)
+       {
+         console.log(result);
+       },
+       error: function(myerror){
+            console.log(myerror);
+       }
     });
-});
+ });
