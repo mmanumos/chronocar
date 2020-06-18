@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <title>Chronocar | Create account</title>
+</head>
+
+<body>
+  <header class="text-center">
+    <h1><i class="fas fa-car"></i> ChronoCar</h1>
+    <h3>Create account</h3>
+  </header>
+  <main class="container">
+    <form method="POST">
+      <div class="form-group">
+        <label for="name">First name</label>
+        <input type="text" name="name" id="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="last_name">Last name</label>
+        <input type="text" name="last_name" id="last_name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="initial_mileage">Initial mileage</label>
+        <input type="text" name="initial_mileage" id="initial_mileage" class="form-control">
+      </div>
+      <input type="button" id="btnCreateAccount" value="Create account" class="btn btn-primary btn-block"/>
+    </form>
+  </main>
+  <aside class="text-center">
+  </aside>
+  <footer class="container-fluid text-center">
+    <p class="mt-5 mb-3 text-muted">&copy;<br>2020</p>
+  </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+
+</html>
