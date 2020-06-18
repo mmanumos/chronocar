@@ -1,5 +1,10 @@
-from flask import Flask, render_template, url_for, make_response
+from flask import Flask, render_template, url_for, make_response, redirect
 app = Flask(__name__)
+
+@app.route('/')
+def redirect_default():
+    response = make_response(redirect("/login"))
+    return response
 
 @app.route('/base')
 def _base():
