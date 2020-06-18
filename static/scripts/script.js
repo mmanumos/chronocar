@@ -12,25 +12,52 @@ $.ajax({
     }
 });
 // Login
-$('#btnSignin').click(function(){
-    var email = $("#email").val();
-    var password = $("#password").val();
-    var user = {
-            "email": email,
-            "password": password
+$('#btnSignin').click(function () {
+    let email = $("#email").val();
+    let password = $("#password").val();
+    let user = {
+        "email": email,
+        "password": password
     };
-    var url = "http://34.71.55.165:5000/api/v1/users/login/";
+    let url = "http://34.71.55.165:5000/api/v1/users/login/";
     $.ajax({
-       type: "POST",
-       url: url,
-       data: JSON.stringify(user),
-       ContentType: 'Application/json',
-       success: function(result)
-       {
-         console.log(result);
-       },
-       error: function(myerror){
+        type: "POST",
+        url: url,
+        data: JSON.stringify(user),
+        ContentType: 'Application/json',
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (myerror) {
             console.log(myerror);
-       }
+        }
     });
- });
+});
+// Create account
+$('#btnCreateAccount').click(function () {
+    let name = $("#name").val();
+    let last_name = $("#last_name").val();
+    let email = $("#email").val();
+    let password = $("#password").val();
+    let initial_mileage = $("#initial_mileage").val();
+    let user = {
+        "name": name,
+        "last_name": last_name,
+        "email": email,
+        "password": password,
+        "initial_mileage": initial_mileage
+    };
+    let url = "http://34.71.55.165:5000/api/v1/users/";
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: JSON.stringify(user),
+        ContentType: 'Application/json',
+        success: function (result) {
+            console.log(result);
+        },
+        error: function (myerror) {
+            console.log(myerror);
+        }
+    });
+});
