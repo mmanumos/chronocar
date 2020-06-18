@@ -38,5 +38,10 @@ def _settings():
 def _help():
     return render_template('help.html')
 
+@app.route('/')
+def redirect_default():
+    response = make_response(redirect("/login"))
+    return response
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0')
