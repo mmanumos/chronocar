@@ -1,5 +1,5 @@
-const user_id_panel = sessionStorage.getItem('UserID');
-console.log("UserID: " + user_id_panel);
+const user_id_create = sessionStorage.getItem('UserID');
+console.log("UserID: " + user_id_create);
 // Get is used to verify if API
 $.ajax({
     url: 'http://34.71.55.165:5000/api/v1/status',
@@ -15,7 +15,7 @@ $.ajax({
 });
 // Subcategories
 $.ajax({
-    url: 'http://34.71.55.165:5000/api/v1/users/'+ user_id_panel + '/categories_sub',
+    url: 'http://34.71.55.165:5000/api/v1/users/' + user_id_create + '/categories_sub',
     type: 'GET',
     success: function (data) {
         console.log(data);
