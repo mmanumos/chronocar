@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create Expense
+{% endblock %}
+
+{% block content %}
+<div class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">Main Category</div>
+    <div class="card-body">
+        <h5 class="card-title">Select</h5>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1">
+            <label class="form-check-label" for="exampleRadios1">
+                Aceite
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="2">
+            <label class="form-check-label" for="exampleRadios2">
+                Llantas
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="1">
+            <label class="form-check-label" for="exampleRadios1">
+                Rodamiento
+            </label>
+        </div>
+    </div>
+</div>
+<form>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Insert mileage">
+    </div>
+    <button type="submit" class="btn btn-primary">Record</button>
+</form>
+{% endblock %}

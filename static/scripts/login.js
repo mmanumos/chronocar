@@ -28,7 +28,7 @@ $('#btnSignin').click(function () {
         ContentType: 'Application/json',
         success: function (result) {
             userId = result.id;
-            sessionStorage.setItem('User ID', userId);
+            sessionStorage.setItem('UserID', userId);
             const divUserId = document.getElementById('showUserId');
             console.log(userId);
             location.href = "panel";

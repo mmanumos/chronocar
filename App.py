@@ -21,6 +21,10 @@ def _panel():
 def _expenses():
     return render_template('expenses.html')
 
+@app.route('/create_expense')
+def _create_expense():
+    return render_template('create-expense.html')
+
 @app.route('/categories')
 def _categories():
     return render_template('categories.html')
