@@ -13,6 +13,7 @@ $.ajax({
 });
 
 const user_id = sessionStorage.getItem('User ID');
+console.log("This is user id: " + user_id);
 const url = 'http://34.71.55.165:5000/api/v1/users/' + user_id + '/expenses/';
 
 $.ajax({
