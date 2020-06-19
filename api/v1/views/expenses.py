@@ -5,6 +5,7 @@ from models import storage
 from models.expense import Expense
 from models.category_sub import CategorySub
 from models.user import User
+from models.alert import Alert
 
 attr = ['amount', 'mileage']
 
@@ -30,6 +31,10 @@ def create_expense(cats_id):
         set_obj(new_obj, **data)
         new_obj.CategorySub_id = cats_id
         storage.insert(new_obj)
+        #Actualización de kilometraje alertas
+        second_last = storage.get_second_last(Expense)
+        print("new_obj ", new_obj.mileage)
+        act_alerts(new_obj.mileage, second_last.mileage)
         return jsonify(new_obj.to_dict())
     except Exception:
         abort(404)
@@ -79,3 +84,10 @@ def expenses_user(user_id):
     except Exception:
        abort(404)
 
+def act_alerts(new, last):
+    val = new - last
+    alerts = storage.getobject(Alert)
+    for al in alerts:
+        obj = storage.getobject(Alert, "id", al['id'], "Dict")["Alert." + str(al['id'])]
+        setattr(obj,"mileage_act", obj.mileage_act + val)
+        storage.commit()

@@ -3,6 +3,7 @@ from api.v1.views import app_views
 from flask import jsonify, request, abort
 from models import storage
 from models.user import User
+from models.expense import Expense
 from models.category_sub import CategorySub
 import hashlib 
 
@@ -102,7 +103,10 @@ def validateEmail(email):
         return 0
        
 
-
-
+@app_views.route('/users/<user_id>/mileage', methods=['GET'])
+def last_mileage(user_id):
+    """ last_mileage  """
+    obj = storage.getlast(Expense)
+    return jsonify(obj.to_dict())
 
 
