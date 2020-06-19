@@ -11,11 +11,9 @@ $.ajax({
         console.log('error API connection');
     }
 });
-
 const user_id = sessionStorage.getItem('UserID');
 console.log("UserID: " + user_id);
 const url = 'http://34.71.55.165:5000/api/v1/users/' + user_id + '/expenses/';
-
 $.ajax({
     url: url,
     type: 'GET',
@@ -28,9 +26,15 @@ $.ajax({
         //Total expenses for user
         $("#total_expense").text("Total $" + total);
         const d = new Date()
-        const ye = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(d)
-        const mo = new Intl.DateTimeFormat('en', { month: 'short' }).format(d)
-        const da = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(d)
+        const ye = new Intl.DateTimeFormat('en', {
+            year: 'numeric'
+        }).format(d)
+        const mo = new Intl.DateTimeFormat('en', {
+            month: 'short'
+        }).format(d)
+        const da = new Intl.DateTimeFormat('en', {
+            day: '2-digit'
+        }).format(d)
         $("#date_act_expense").text(da + "-" + mo + "-" + ye);
     },
     error: function () {

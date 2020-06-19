@@ -100,6 +100,16 @@ class DBStorage:
                 return list_objs
 
 
+    def getlast(self, cls=None):
+        """ Get last obj"""
+        obj = self.__session.query(cls).order_by(cls.id.desc()).first()
+        return obj
+    
+    def get_second_last(self, cls=None):
+        """ Get last obj"""
+        obj = self.__session.query(cls).order_by(cls.id.desc())
+        return obj[1]
+
 
 
 
