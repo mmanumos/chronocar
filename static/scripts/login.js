@@ -1,4 +1,16 @@
+/**
+ * VARIABLES
+ */
 let userId;
+/**
+ * EVENT LISTENERS
+ */
+/**
+ * FUNCTIONS
+ */
+/**
+ * API
+ */
 // Get is used to verify if API
 $.ajax({
     url: 'http://34.71.55.165:5000/api/v1/status',
