@@ -2,12 +2,17 @@
  * VARIABLES
  */
 let userId;
+const mainCatId1 = document.getElementById('mainCatId1');
 /**
  * EVENT LISTENERS
  */
+mainCatId1.addEventListener('click', myFunc);
 /**
  * FUNCTIONS
  */
+function myFun() {
+    console.log('Works!');
+}
 /**
  * API
  */
