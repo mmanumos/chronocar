@@ -3,37 +3,41 @@
 Panel
 {% endblock %}
 {% block content %}
-<p class="mt-2">06/14/2020 Last mileage 3450 km</p>
-<div class="row text-center my-4">
-    <div class="col p-1">
+<p class="text-center" class="mt-2" style="font-size: 20px; font-weight: bold;">Last mileage :<spam id="last_mileage">
+        3000</spam>
+</p>
+<div class="row text-center my-4" style="background-color: black;">
+    <div class="col p-1" style="border-bottom: 1px solid white; border-right: 1px solid white;">
         <a href="">
             <p>Fuel</p>
             <i class="fas fa-gas-pump"></i>
         </a>
     </div>
-    <div class="col p-1">
+    <div class="col p-1" style="border-bottom: 1px solid white;">
         <a href="">
             <p>Preventive Maintenance</p>
             <i class="fas fa-tasks"></i>
         </a>
     </div>
     <div class="w-100"></div>
-    <div class="col p-1">
+    <div class="col p-1" style="border-bottom: 1px solid white; border-right: 1px solid white;">
         <a href="">
             <p>Consumables</p>
             <i class="fas fa-shopping-bag"></i>
         </a>
     </div>
-    <div class="col p-1">
+    <div class="col p-1" style="border-bottom: 1px solid white;">
         <a href="">
             <p>Corrective Maintenance</p>
             <i class="fas fa-tools"></i>
         </a>
     </div>
 </div>
-<p class="text-center"><i class="fas fa-exclamation-triangle text-warning"></i> &nbsp;Alerts - Preventive Maintenance
+<p class="text-center">
+<h4 style="font-size: 20px;"><i class="fas fa-exclamation-triangle text-warning">
+    </i> &nbsp;Alerts - Preventive Maintenance</h4>
 </p>
-<table class="table table-striped">
+<table class="table table-striped" style="border-top: 3px solid black;">
     <thead>
         <tr>
             <th scope="col">Missing</th>

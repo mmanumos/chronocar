@@ -12,12 +12,13 @@ $.ajax({
     }
 });
 
+const user_id = sessionStorage.getItem('User ID');
+const url = 'http://34.71.55.165:5000/api/v1/users/' + user_id + '/expenses/';
+
 $.ajax({
-    url: 'http://34.71.55.165:5000/api/v1/users/3/expenses/',
+    url: url,
     type: 'GET',
     success: function (data) {
-        //const r = sessionStorage.getItem('userID')
-        //console.log("This is user_id" + r);
         let total = 0;
         for (var i = 0; i < data.length; i++) {
             $('#table-expenses').append('<tr> <td>' + data[i]['created_at'] + '</td> <td>' + data[i]['catsu_name'] + '</td> <td>' + data[i]['amount'] + '</td>  </tr>');
