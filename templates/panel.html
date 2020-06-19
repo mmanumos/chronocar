@@ -3,9 +3,8 @@
 Panel
 {% endblock %}
 {% block content %}
-<p class="text-center" class="mt-2">Last mileage :<spam
-        id="last_mileage">
-        3000</spam>
+<p class="text-center" class="mt-2">Last mileage :<spam id="last_mileage">
+    </spam>
 </p>
 <div class="row text-center my-4">
     <div class="col p-1 bg-primary text-white border border-light">
@@ -46,22 +45,7 @@ Panel
             <th scope="col">Category</th>
         </tr>
     </thead>
-    <tbody>
-        <tr>
-            <td>230 km</td>
-            <td class="text-center"><i class="fas fa-circle text-danger""></i></td>
-                <td>Oil</td>
-            </tr>
-            <tr>
-                <td>500 km</td>
-                <td class=" text-center"><i class="fas fa-circle text-warning"></i></td>
-            <td>Battery</td>
-        </tr>
-        <tr>
-            <td>1500 km</td>
-            <td class="text-center"><i class="fas fa-circle text-success"></i></td>
-            <td>Tire</td>
-        </tr>
+    <tbody id="alerts_panel">
     </tbody>
 </table>
 {% endblock %}
