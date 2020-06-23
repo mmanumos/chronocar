@@ -54,7 +54,7 @@ def delete_alert(alert_id):
     except Exception:
         abort(404)
 
-@app_views.route('/users/<user_id>/alerts/settings', methods=['GET'])
+@app_views.route('/users/<user_id>/alerts/settings/', methods=['GET'])
 def alerts_settings(user_id):
     """ Alerts with settings for Ajustes - module """
     try:
@@ -73,6 +73,7 @@ def alerts_settings(user_id):
         for al in list_alert:
             alert_dict = {}
             alert_dict['id'] = al['id']
+            alert_dict['limit'] = al['mileage_limit']
             alert_dict['high'] = al['high']
             alert_dict['middle'] = al['middle']
             alert_dict['low'] = al['low']
