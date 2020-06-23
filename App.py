@@ -33,6 +33,10 @@ def _categories():
 def _settings():
     return render_template('settings.html')
 
+@app.route('/alerts')
+def _alerts():
+    return render_template('alerts.html')
+
 @app.route('/help')
 def _help():
     return render_template('help.html')

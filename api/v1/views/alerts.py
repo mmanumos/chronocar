@@ -69,7 +69,16 @@ def alerts_settings(user_id):
                 list_tempa = storage.getobject(CategorySub, "id", catsu['id'], "Dict")["CategorySub." + str(catsu['id'])].alerts
                 for tempa in list_tempa:
                     list_alert.append(tempa)
-        return jsonify(list_alert)
+        list_alertsetting = []
+        for al in list_alert:
+            alert_dict = {}
+            alert_dict['id'] = al['id']
+            alert_dict['high'] = al['high']
+            alert_dict['middle'] = al['middle']
+            alert_dict['low'] = al['low']
+            alert_dict['catsub_name'] = storage.getobject(CategorySub, "id", al['CategorySub_id'], "Dict")["CategorySub." + str(al['CategorySub_id'])].name
+            list_alertsetting.append(alert_dict)
+        return jsonify(list_alertsetting)
     except Exception:
         abort(404)
 
