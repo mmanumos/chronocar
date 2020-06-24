@@ -3,21 +3,28 @@
 
 ChronoCar is a PWA that helps mainly vehicle owners to keep track the expenses divided them in categories like Preventive maintenance, corrective maintenance, consumables and fuel. Every expense is recorded with the mileage, therefore allows the app to create alerts to preventive maintenance indicating missing mileage.
 
-# Use the app in this link
+## Use the app in this link
 http://www.chronocar.online
 
-## Stack
+## Stack technology
+
+### Frontend
 * [x] HTML
-* [x] CSS
+* [x] CSS - Bootstrap
 * [x] JavaScript
-* [x] Python
-* [x] MySQL
+
+### Backend
+* [x] Python - Flask
+* [x] Python - SQLAlchemy
+
+### Databases
+* [x] MySQL 
 
 ## Install & Setup
-* [x] pycodestyle
-* [x] MySQL
+* [x] MySQL 
 * [x] Flask
 * [x] SQLAlchemy
+* [x] flask_cors
 
 ## Directory description
 * ```api/``` Directory that contains independent API which is used  by the application.
