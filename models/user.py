@@ -24,8 +24,3 @@ class User(BaseModel, Base):
         list_categories = models.storage.getobject(CategorySub, "User_id", self.id)
         return list_categories
 
-     
-
-    def login():
-        """ login """
-        pass

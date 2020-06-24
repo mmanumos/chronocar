@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base() #The object is created to map all classes
 
 class BaseModel:
-    """  """
+    """ Model class with attributes and methods to be inherited  """
 
     id = Column(Integer, nullable=False, primary_key=True)  #Auto-increment should be default
     name = Column(String(45), nullable=False)

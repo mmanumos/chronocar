@@ -71,7 +71,7 @@ def update_category_sub(cats_id):
 
 @app_views.route('/categories_sub/<cats_id>', methods=['DELETE'])
 def delete_category_sub(cats_id):
-    """  """
+    """ Delete a category_sub """
     try:
         obj = storage.getobject(CategorySub, "id", cats_id, "Dict")["CategorySub." + str(cats_id)]
         # Delete associated alerts

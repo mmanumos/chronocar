@@ -22,14 +22,6 @@ class Expense(Base):
         for key, value in kwargs.items():
             setattr(self, key, value)
 
-    def UpdateAlertAct():
-        """ Update all fields [mileage_act] according to the new current mileage """
-        # AlertAct = ((NewMileage - CurrentMileage) + CurrentAlertAct)
-        #
-        #
-        """ Call to class Alert method to identify alert priority in all alerts from preventive maintenance"""
-        #Alert.IdentifyPriority(self.CategorySub_id)
-
     def to_dict(self):
         """ return the object like dictionary with some changes  """
         dict_obj = self.__dict__.copy()

@@ -9,6 +9,7 @@ from models.user import User
 attr = ['mileage_limit', 'mileage_act', 'high', 'middle']
 
 def set_obj(obj, **data):
+    """ Set the values for every given key """
     for key, value in data.items():
         if key in attr:
             setattr(obj, key, value)
@@ -34,6 +35,7 @@ def create_alert(cats_id):
     
 @app_views.route('/alerts/<alert_id>/', methods=['PUT'])
 def update_alert(alert_id):
+    """ Update an alert """
     try:
         my_alert = storage.getobject(Alert, "id", alert_id, "Dict")["Alert."+ str(alert_id)]
         data = request.get_json(force=True)
@@ -47,6 +49,7 @@ def update_alert(alert_id):
 
 @app_views.route('/alerts/<alert_id>/', methods=['DELETE'])
 def delete_alert(alert_id):
+    """ Delete an alert """
     try:
         my_alert = storage.getobject(Alert, "id", alert_id, "Dict")["Alert." + str(alert_id)]
         storage.delete(my_alert)

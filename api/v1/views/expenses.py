@@ -7,6 +7,7 @@ from models.category_sub import CategorySub
 from models.user import User
 from models.alert import Alert
 
+#Key mandatory attributes 
 attr = ['amount', 'mileage']
 
 def set_obj(obj, **data):
@@ -85,6 +86,7 @@ def expenses_user(user_id):
        abort(404)
 
 def act_alerts(new, last):
+    """ Set the alerts with last milleage  """
     val = new - last
     alerts = storage.getobject(Alert)
     for al in alerts:
