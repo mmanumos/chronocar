@@ -1,6 +1,11 @@
 # Chronocar
 :open_file_folder: chronocar/
 
+ChronoCar is a PWA that helps mainly vehicle owners to keep track the expenses divided them in categories like Preventive maintenance, corrective maintenance, consumables and fuel. Every expense is recorded with the mileage, therefore allows the app to create alerts to preventive maintenance indicating missing mileage.
+
+# Use the app in this link
+http://www.chronocar.online
+
 ## Stack
 * [x] HTML
 * [x] CSS
@@ -15,17 +20,15 @@
 * [x] SQLAlchemy
 
 ## Directory description
-* ```api/``` 
-* ```api/v1/``` 
-* ```api/v1/views/``` 
-* ```models/``` 
-* ```models/engine/``` 
-* ```static/``` Directory contains all content static this project.
-* ```static/images/``` 
-* ```static/scripts/``` 
-* ```static/styles/``` 
-* ```templates/``` Directory contains all html files for this project.
-* ```tests/``` 
+* ```api/``` Directory that contains independent API which is used  by the application.
+* ```api/v1/``` Version 1 of API
+* ```api/v1/views/```  Directory with all view files which contains the routes for API
+* ```models/```  Directory contains all logical models.
+* ```models/engine/``` Directory contains all models for database connection and methods.
+* ```static/``` Directory contains all content static.
+* ```static/scripts/``` Directory contains all js files.
+* ```static/styles/``` Directory contains all styles.
+* ```templates/``` Directory contains all html files.
 
 ## File description
 * ```AUTHORS``` Lists all individuals having contributed content to the repository.
